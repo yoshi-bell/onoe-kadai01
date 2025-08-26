@@ -39,7 +39,7 @@
                     <tr class="confirm-table__row">
                         <th class="confirm-table__header">性別</th>
                         <td class="confirm-table__text">
-                            {{ $contact['gender'] }}
+                            {{ $contact['gender_text'] }}
                         </td>
                     </tr>
                     <tr class="confirm-table__row">

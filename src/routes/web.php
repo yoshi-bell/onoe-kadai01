@@ -26,3 +26,8 @@ Route::post('/back', [ContactController::class, 'back']);
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AuthController::class, 'admin']); // 管理画面
 });
+
+//テスト用ルート
+Route::get('/thanks', function () {
+    return view('thanks');
+});
