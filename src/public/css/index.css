@@ -9,10 +9,30 @@
     font-weight: 700;
     font-style: normal;
 }
-
 body{
     font-family:"Inika",serif;
+    color: #8B7969;
 }
+.header {
+    background-color: #fff;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #E0DFDE;
+}
+.header__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+.header__logo {
+    font-size: 40px;
+    /* font-weight: bold; */
+    color: #8B7969;
+    text-decoration: none;
+}
+
 .contact-form__content {
     margin: 0 auto;
     padding: 30px 15px;
@@ -34,25 +54,6 @@ body{
     font-weight: bold;
 }
 
-.header {
-    background-color: #fff;
-    width: 100%;
-    padding: 20px;
-    border-bottom: 1px solid #E0DFDE;
-}
-.header__inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-}
-.header__logo {
-    font-size: 40px;
-    /* font-weight: bold; */
-    color: #8B7969;
-    text-decoration: none;
-}
 
 .form__group {
     display: flex;

@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', [AuthController::class, 'admin']); // 管理画面
 });
 
-//テスト用ルート
+//テスト用ルート 最後に消す
 Route::get('/thanks', function () {
     return view('thanks');
 });

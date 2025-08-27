@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
+use Illuminate\Support\Facades\Auth; // Authファサードを追加
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -28,13 +29,22 @@ class CreateNewUser implements CreatesNewUsers
                 'max:255',
                 Rule::unique(User::class),
             ],
-            'password' => $this->passwordRules(),
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+            ],
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
+
+        // 登録後に自動的にログアウトさせる
+        Auth::logout();
+
+        return $user;
     }
 }
