@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>admin</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
@@ -116,7 +117,17 @@
                                 -
                                 @endif
                             </td>
-                            <td><button>詳細</button></td>
+                            <td><button class="detail-button"
+                                    data-id="{{ $contact->id }}"
+                                    data-last_name="{{ $contact->last_name }}"
+                                    data-first_name="{{ $contact->first_name }}"
+                                    data-gender="@if($contact->gender === 1)男性@elseif($contact->gender === 2)女性@elseその他@endif"
+                                    data-email="{{ $contact->email }}"
+                                    data-tel="{{ $contact->tel }}"
+                                    data-address="{{ $contact->address }}"
+                                    data-building="{{ $contact->building }}"
+                                    data-contact_type="{{ $contact->category ? $contact->category->content : '-' }}"
+                                    data-detail="{{ $contact->detail }}">詳細</button></td>
                         </tr>
                         @endforeach
                         @endif
@@ -125,6 +136,52 @@
             </div>
         </div>
     </main>
+    <!-- モーダルウィンドウのHTMLを追加 -->
+    <div class="modal" id="modal">
+        <div class="modal__content">
+            <span class="modal__close-btn">&times;</span>
+            <table class="modal-table">
+                <tr>
+                    <th>お名前</th>
+                    <td id="modal-name"></td>
+                </tr>
+                <tr>
+                    <th>性別</th>
+                    <td id="modal-gender"></td>
+                </tr>
+                <tr>
+                    <th>メールアドレス</th>
+                    <td id="modal-email"></td>
+                </tr>
+                <tr>
+                    <th>電話番号</th>
+                    <td id="modal-tel"></td>
+                </tr>
+                <tr>
+                    <th>住所</th>
+                    <td id="modal-address"></td>
+                </tr>
+                <tr>
+                    <th>建物名</th>
+                    <td id="modal-building"></td>
+                </tr>
+                <tr>
+                    <th>お問い合わせの種類</th>
+                    <td id="modal-contact-type"></td>
+                </tr>
+                <tr>
+                    <th>お問い合わせ内容</th>
+                    <td id="modal-detail"></td>
+                </tr>
+            </table>
+            <div class="delete-button-container">
+                <button type="button" class="delete-button" data-id="">削除</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScriptの読み込みを追加 -->
+    <script src="{{ asset('js/admin.js') }}"></script>
 </body>
 
 </html>

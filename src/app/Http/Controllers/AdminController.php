@@ -72,4 +72,19 @@ class AdminController extends Controller
 
         return view('admin', compact('contacts', 'categories'));
     }
+
+    public function delete($contact_id)
+    {
+        try {
+            $contact = Contact::find($contact_id);
+            if ($contact) {
+                $contact->delete();
+                return response()->json(['success' => true]);
+            } else {
+                return response()->json(['success' => false, 'message' => 'Record not found'], 404);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
+        }
+    }
 }
