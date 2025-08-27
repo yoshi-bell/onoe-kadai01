@@ -45,7 +45,6 @@ class ContactController extends Controller
 
         $category = Category::find($contact['category_id']);
         $contact['category_content'] = $category->content;
-        
         // Convert gender code to display text
         if ($contact['gender'] === '1') {
             $contact['gender_text'] = '男性';
@@ -54,7 +53,6 @@ class ContactController extends Controller
         } else {
             $contact['gender_text'] = 'その他';
         }
-        
         return view('confirm', compact('contact'));
     }
 

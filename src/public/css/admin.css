@@ -1,0 +1,264 @@
+/* フォント設定 */
+.inika-regular {
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inika-bold {
+    font-family: "Inika", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* 全体的なスタイル */
+body {
+    font-family: "Inika", serif;
+    color: #8B7969;
+    font-weight: 400 !important;
+}
+
+/* ヘッダー */
+.header {
+    background-color: #fff;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #E0DFDE;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.header-utilities {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    position: relative;
+}
+
+.header__logo {
+    font-size: 40px;
+    color: #8B7969;
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logout-button__link {
+    height: 35px;
+    width: 100px;
+    background-color: #F0F0F0;
+    color: #D9C6B5;
+    font-size: 20px;
+    border: 1px solid #D9C6B5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* メインコンテンツのコンテナ */
+.admin-form__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.admin-form__heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.admin-form__heading h2 {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* 検索フォーム */
+.search-form__items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.search-form__item input,
+.search-form__item select {
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    padding: 10px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #F4F4F4;
+}
+
+.search-form__item input[type="text"] {
+    width: 340px;
+}
+
+
+.search-form__item input[type="date"] {
+    width: 150px;
+}
+
+.search-form__button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.search-form__button--search,
+.search-form__button--reset {
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.search-form__button--search {
+    background-color: #8B7969;
+    color: #fff;
+    border: none;
+}
+
+.search-form__button--reset {
+    background-color: #D9C6B5;
+    color: #FFFFFF;
+    border: 1px solid #D9C6B5;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* ページネーションとエクスポートボタンのコンテナ */
+.layout-container {
+    display: flex;
+    /* Flexboxを適用して子要素を横並びに */
+    justify-content: space-between;
+    /* 子要素を両端に配置 */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.export-button button {
+    background-color: #E1DBD6;
+    color: #8B7969;
+    font-size:18px;
+    border: 1px solid #D9C6B5;
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 検索結果テーブル */
+.result-table {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.result-table th,
+.result-table td {
+    border: 1px solid #E0DFDE;
+    padding: 15px;
+    text-align: center;
+}
+
+.result-table th {
+    background-color: #8B7969;
+    color: #fff;
+    font-weight: bold;
+}
+
+.result-table td button {
+    background-color: #fff;
+    color: #D9C6B5;
+    border: 1px solid #D9C6B5;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ページネーションを横並びにし、画像のようなスタイルにする */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination nav {
+    /* ページのリンクを囲むnavタグにFlexboxを適用 */
+    display: flex;
+    justify-content: center;
+}
+
+.pagination ul {
+    /* ulタグにFlexboxを適用して横並びに */
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #E0DFDE;
+    /* 全体を囲むボーダー */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.pagination li {
+    margin: 0;
+}
+
+.pagination a,
+.pagination span {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #8B7969;
+    background-color: #fff;
+    border-right: 1px solid #E0DFDE;
+}
+
+.pagination li:last-child a,
+.pagination li:last-child span {
+    border-right: none;
+}
+
+.pagination a:hover {
+    background-color: #F4F4F4;
+}
+
+.pagination .active span {
+    background-color: #8B7969;
+    border-color: #8B7969;
+    color: #fff;
+    cursor: default;
+}
+
+.pagination .disabled span {
+    color: #D9C6B5;
+    cursor: not-allowed;
+    background-color: transparent;
+}
