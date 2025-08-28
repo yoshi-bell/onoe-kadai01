@@ -1,0 +1,40 @@
+body {
+    color: #8B7969;
+    font-weight: 400;
+}
+
+.header {
+    background-color: #fff;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #E0DFDE;
+    height: 100px;
+}
+
+.header__inner {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.header-utilities {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    position: relative;
+}
+
+.header__logo {
+    font-family: "Inika", serif;
+    font-size: 40px;
+    color: #8B7969;
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

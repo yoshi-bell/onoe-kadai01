@@ -1,25 +1,22 @@
-/*
-* confirm.css
-* 確認画面専用のスタイル
-*/
-
-/* フォームの共通スタイルをindex.cssから読み込むため、変更・追加分のみ記述 */
-
 .confirm__content {
-    /* 入力フォームと確認画面でクラス名を分けることで、個別のスタイルを適用しやすくします */
     margin: 0 auto;
     padding: 30px 15px;
     max-width: 900px;
     width: 70%;
     background-color: #fff;
-    color: #8B7969;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
 .confirm__heading {
     text-align: center;
-    font-size: 35px;
+}
+
+.confirm__heading h2{
+    font-family: "Inika", serif;
+    margin-top: 0px;
+    font-size:35px;
+    font-weight: normal;
 }
 
 .confirm-table {
@@ -57,7 +54,6 @@
     padding-left: 10px;
 }
 
-/* ボタンのスタイル */
 .form__button-group {
     display: flex;
     justify-content: center;

@@ -1,0 +1,83 @@
+.confirm__content {
+    /* 入力フォームと確認画面でクラス名を分けることで、個別のスタイルを適用しやすくします */
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 900px;
+    width: 70%;
+    background-color: #fff;
+    color: #8B7969;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.confirm__heading {
+    text-align: center;
+    font-size: 35px;
+}
+
+.confirm-table {
+    width: 100%;
+    /* 罫線を追加 */
+    border: 1px solid #ddd;
+}
+
+.confirm-table__inner {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.confirm-table__row {
+    border-bottom: 1px solid #ddd;
+}
+
+.confirm-table__header {
+    text-align: left;
+    padding: 15px 0;
+    width: 30%;
+    font-weight: bold;
+    font-size: 18px;
+    /* 背景色を追加 */
+    background-color: #BAA899;
+    color: #fff;
+    padding-left: 10px;
+}
+
+.confirm-table__text {
+    text-align: left;
+    padding: 15px 0;
+    width: 70%;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+/* ボタンのスタイル */
+.form__button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.form__button-submit {
+    background-color: #8B7969;
+    color: #fff;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.form__button-back {
+    background-color: #fff;
+    color: #8B7969;
+    padding: 15px 40px;
+    border: 1px solid #8B7969;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}

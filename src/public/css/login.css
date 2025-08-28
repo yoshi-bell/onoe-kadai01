@@ -1,64 +1,6 @@
-/* フォント設定 */
-.inika-regular {
-    font-family: "Inika", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.inika-bold {
-    font-family: "Inika", serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-/* 全体的なスタイル */
 body {
-    font-family: "Inika", serif;
-    color: #8B7969;
-    font-weight: 400 !important;
+    background-color: #F1ECE7;
 }
-
-/* ヘッダー */
-.header {
-    background-color: #fff;
-    width: 100%;
-    padding: 20px;
-    border-bottom: 1px solid #E0DFDE;
-}
-
-.header__inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-}
-
-.header-utilities {
-    display: flex;
-    justify-content: flex-end;
-    /* 右端に配置 */
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    position: relative;
-    /* 子要素のabsolute配置の基準にする */
-}
-
-/* ヘッダーのロゴを中央に固定 */
-.header__logo {
-    font-size: 40px;
-    color: #8B7969;
-    text-decoration: none;
-    position: absolute;
-    /* 位置を絶対指定 */
-    left: 50%;
-    /* 中央に配置 */
-    transform: translateX(-50%);
-    /* 中央揃えの微調整 */
-}
-
-/* 新しいregisterボタンのスタイル */
 .register-button__link {
     height: 35px;
     width: 100px;
@@ -67,15 +9,13 @@ body {
     font-size: 20px;
     border: 1px solid #D9C6B5;
     display: flex;
-    /* Flexboxを使ってテキストを中央に配置 */
     justify-content: center;
     align-items: center;
     text-decoration: none;
     border-radius: 5px;
-    /* 角丸を追加 */
+    cursor: pointer;
 }
 
-/* フォーム全体のコンテナ */
 .login-form__content {
     margin: 0 auto;
     padding: 30px 15px;
@@ -87,18 +27,17 @@ body {
     border-radius: 10px;
 }
 
-/* フォームのタイトル */
 .login-form__heading {
     text-align: center;
     margin-bottom: 20px;
 }
 
 .login-form__heading h2 {
+    font-family: "Inika", serif;
     font-size: 35px;
-    font-weight: bold;
+    font-weight: normal;
 }
 
-/* 各フォームグループ（ラベルと入力欄のセット）を囲むコンテナ */
 .form {
     display: flex;
     flex-direction: column;
@@ -112,25 +51,20 @@ body {
     width: 70%;
 }
 
-/* タイトル部分 */
 .form__group-title {
     width: 100%;
     margin-bottom: 10px;
 }
 
-/* ラベルのテキスト */
 .form__label--item {
-    font-weight: bold;
     font-size: 25px;
 }
 
-/* 入力欄のコンテナ */
 .form__group-content {
     width: 100%;
     height: 55px;
 }
 
-/* テキスト入力欄 */
 .form__input--text {
     width: 100%;
     height: 55px;
@@ -147,20 +81,17 @@ body {
     font-weight: normal;
 }
 
-/* エラーメッセージ */
 .form__error {
     color: red;
     font-size: 12px;
     margin-top: 5px;
 }
 
-/* ログインボタンのコンテナ */
 .form__button {
     text-align: center;
     margin-top: 30px;
 }
 
-/* ログインボタン */
 .form__button-submit {
     background-color: #8B7969;
     color: #fff;
@@ -168,22 +99,9 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    font-weight: bold;
     height: 45px;
     width: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* 会員登録リンクのコンテナ */
-.register__link {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.register__button-submit {
-    color: #8B7969;
-    text-decoration: none;
-    font-size: 14px;
 }

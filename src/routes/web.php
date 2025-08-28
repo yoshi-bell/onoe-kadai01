@@ -24,8 +24,3 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/search', [AdminController::class, 'search'])->name('admin.search');
     Route::post('/admin/delete/{contact_id}', [AdminController::class, 'delete'])->name('admin.delete');
 });
-
-//テスト用ルート 最後に消す
-Route::get('/thanks', function () {
-    return view('thanks');
-});

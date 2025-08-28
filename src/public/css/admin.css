@@ -1,45 +1,4 @@
 
-/* 全体的なスタイル */
-body {
-    color: #8B7969;
-    font-weight: 400;
-}
-
-/* ヘッダー */
-.header {
-    background-color: #fff;
-    width: 100%;
-    padding: 20px;
-    border-bottom: 1px solid #E0DFDE;
-}
-
-.header__inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-}
-
-.header-utilities {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    position: relative;
-}
-
-.header__logo {
-    font-family: "Inika", serif;
-    font-size: 40px;
-    color: #8B7969;
-    text-decoration: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 .logout-button__link {
     height: 35px;
     width: 100px;
@@ -55,7 +14,6 @@ body {
     cursor: pointer;
 }
 
-/* メインコンテンツのコンテナ */
 .admin-form__content {
     margin: 0 auto;
     max-width: 1200px;
@@ -63,17 +21,16 @@ body {
 }
 
 .admin-form__heading {
-    font-family: "Inika", serif;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .admin-form__heading h2 {
+    font-family: "Inika", serif;
     font-size: 35px;
-    font-weight: bold;
+    font-weight: normal;
 }
 
-/* 検索フォーム */
 .search-form__items {
     display: flex;
     flex-wrap: wrap;
@@ -135,9 +92,7 @@ body {
 /* ページネーションとエクスポートボタンのコンテナ */
 .layout-container {
     display: flex;
-    /* Flexboxを適用して子要素を横並びに */
     justify-content: space-between;
-    /* 子要素を両端に配置 */
     align-items: center;
     margin-bottom: 10px;
 }

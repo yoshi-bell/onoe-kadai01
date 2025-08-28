@@ -6,7 +6,7 @@ Dockerビルド
 1.git clone git@github.com:yoshi-bell/onoe-kadai01.git
 2.docker-compose up -d --build
 
-＊MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせて
+＊MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせてdocker-compose.ymlファイルを編集してください。
 
 Laravel環境構築
 1.docker-compose exec php bash
@@ -15,6 +15,7 @@ Laravel環境構築
 4.php artisan key:generate
 5.php artisan migrate
 6.php artisan db:seed
+＊シーディングにより、「お問い合わせの種類」5種類のデータ、お問い合わせ内容のダミーデータ35件がデータベースに入力されます。
 
 ## アプリケーションの機能
 このアプリケーションは、Webサイトのユーザーからのお問い合わせを効率的に管理するためのシステムです。

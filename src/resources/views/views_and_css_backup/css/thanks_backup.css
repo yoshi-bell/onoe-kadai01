@@ -1,0 +1,63 @@
+/*
+* thanks.css
+* 完了画面専用のスタイル
+*/
+
+/* フォームの共通スタイルをindex.cssから読み込むため、変更・追加分のみ記述 */
+
+
+.thanks__content {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.thanks__text-container {
+    width:100%;
+    text-align: center;
+    position: relative;
+}
+
+.thanks__main-text {
+    font-size: 30px;
+    color: #8B7969;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.home-button {
+    margin-top: 20px;
+}
+
+.thanks__background-text {
+    font-family: 'Inika', serif;
+    font-size: 220px;
+    font-weight: 400;
+    color: #8B7969;
+    opacity: 0.05;
+    position: absolute;
+    transform: translate(0,-185%);
+    pointer-events: none;
+    line-height: 1;
+    width: 100%;
+}
+
+.home-button__link {
+    background-color: #82756A;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+}
+@media screen and (max-width: 1085px) {
+    .thanks__background-text {
+        transform: translate(0, -115%);
+    }
+}
