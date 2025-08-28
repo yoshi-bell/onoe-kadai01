@@ -19,7 +19,7 @@
         <h2>Admin</h2>
     </div>
     <div class="search-form">
-        <form class="search-form__items" action="/admin/search" method="get">
+        <form class="search-form__items" id="search-form" action="/admin/search" method="get">
             <div class="search-form__item">
                 <input type="text" name="name_or_email" placeholder="名前やメールアドレスを入力してください" value="{{ old('name_or_email') ?? $name_or_email ?? '' }}">
             </div>
@@ -54,7 +54,7 @@
 
     <div class="layout-container">
         <div class="export-button">
-            <button>エクスポート</button>
+            <button id="export-button">エクスポート</button>
         </div>
         <div class="pagination">
             {{ $contacts->links('vendor.pagination.admin_pagination') }}
@@ -116,10 +116,23 @@
         </table>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const exportButton = document.getElementById('export-button');
+
+        if (exportButton) {
+            exportButton.addEventListener('click', function(event) {
+                // 現在のURLからクエリ文字列を取得
+                const queryString = window.location.search;
+                const exportUrl = '/admin/export-csv' + queryString;
+                window.location.href = exportUrl;
+            });
+        }
+    });
+</script>
 @endsection
 
 @section('modal')
-<!-- モーダルウィンドウのHTMLを追加 -->
 <div class="modal" id="modal">
     <div class="modal__content">
         <span class="modal__close-btn">&times;</span>
@@ -163,6 +176,5 @@
     </div>
 </div>
 
-<!-- JavaScriptの読み込みを追加 -->
 <script src="{{ asset('js/admin.js') }}"></script>
 @endsection

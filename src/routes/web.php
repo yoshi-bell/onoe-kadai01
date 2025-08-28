@@ -22,6 +22,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
     Route::get('/admin/search', [AdminController::class, 'search'])->name('admin.search');
     Route::post('/admin/delete/{contact_id}', [AdminController::class, 'delete'])->name('admin.delete');
+    // 管理者ページの検索結果をCSVでエクスポート
+    Route::get('/admin/export-csv', [AdminController::class, 'exportCsv'])->name('admin.export-csv');
 });
 
 //ログアウト時ログインページに移動
