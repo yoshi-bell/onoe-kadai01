@@ -112,6 +112,7 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
 .result-table table {
@@ -141,7 +142,6 @@
     cursor: pointer;
     font-size: 16px;
 }
-/* ページネーションを横並びにし、画像のようなスタイルにする */
 
 .pagination {
     display: flex;
@@ -151,19 +151,16 @@
 }
 
 .pagination nav {
-    /* ページのリンクを囲むnavタグにFlexboxを適用 */
     display: flex;
     justify-content: center;
 }
 
 .pagination ul {
-    /* ulタグにFlexboxを適用して横並びに */
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
     border: 1px solid #E0DFDE;
-    /* 全体を囲むボーダー */
     border-radius: 5px;
     overflow: hidden;
 }
@@ -220,17 +217,19 @@
 
 .modal__content {
     background-color: #fff;
-    padding: 30px;
+    padding: 30px 70px;
     border-radius: 10px;
     width: 90%;
-    max-width: 600px;
+    max-width: 800px;
+    height:85vh;
+    overflow-y: auto;
     position: relative;
 }
 
 .modal__close-btn {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 30px;
+    right: 50px;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -246,27 +245,18 @@
 
 .modal-table {
     width: 100%;
-    margin-bottom: 20px;
+    margin: 70px 0 50px 0;
 }
 
 .modal-table th,
 .modal-table td {
-    padding: 10px;
+    padding: 15px 10px;
     border: none;
     text-align: left;
 }
 
 .modal-table th {
-    color: #8B7969;
-    width: 35%;
-}
-
-.modal-table td {
-    color: #8B7969;
-}
-
-.modal-table tr:not(:last-child) {
-    border-bottom: 1px solid #E0DFDE;
+    width: 30%;
 }
 
 .delete-button-container {

@@ -4,27 +4,25 @@
     max-width: 900px;
     width: 70%;
     background-color: #fff;
-    color: #8B7969;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
 .contact-form__heading {
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .contact-form__heading h2 {
     font-family: "Inika", serif;
     margin-top: 0px;
+    margin-bottom:20px;
     font-size: 35px;
     font-weight: normal;
 }
 
 .form__group {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    align-items: flex-start;
+    margin-bottom: 16px;
 }
 
 .form__group-title {
@@ -35,7 +33,6 @@
 }
 
 .form__label--item {
-    font-weight: bold;
     font-size: 20px;
 }
 
@@ -56,19 +53,14 @@
 
 .form__input--name {
     display: flex;
-    gap: 10px;
+    gap: 30px;
 }
 
-.form__input--name input {
-    width: 30%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    background-color: #F4F4F4;
-
+.form__input-wrapper {
+    width: 35%;
 }
 
+.form__input--name input,
 .form__input--text input,
 .form__input--tel input,
 .form__input--select select,
@@ -80,15 +72,34 @@
     font-size: 14px;
     background-color: #F4F4F4;
 }
-.form__input--select select{
+
+.form__input--select {
+    position: relative;
     width: 60%;
 }
 
+.form__input--select select {
+    padding-right: 30px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.form__input--select::after {
+    content: '▼';
+    font-size: 12px;
+    color: #8B7969;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
 .form__input--radio {
     display: flex;
     gap: 20px;
     align-items: center;
-    padding: 10px;
+    padding: 0 10px 20px 10px;
 }
 
 .form__input--radio label {
@@ -121,7 +132,7 @@
 
 .form__button {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 16px;
 }
 
 .form__button-submit {
@@ -138,5 +149,6 @@
 .form__error {
     color: red;
     font-size: 12px;
-    margin-top: 5px;
+    height: 1.5em;
+    margin-top: 2px;
 }

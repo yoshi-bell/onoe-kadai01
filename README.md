@@ -2,6 +2,11 @@
 お問い合わせフォーム
 
 ## 環境構築
+
+###　前提条件
+* Git
+* Docker
+
 Dockerビルド
 1.git clone git@github.com:yoshi-bell/onoe-kadai01.git
 2.docker-compose up -d --build

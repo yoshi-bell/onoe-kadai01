@@ -122,7 +122,8 @@
 
         if (exportButton) {
             exportButton.addEventListener('click', function(event) {
-                // 現在のURLからクエリ文字列を取得
+                this.textContent = 'ダウンロードを開始しました';
+                this.disabled = true;
                 const queryString = window.location.search;
                 const exportUrl = '/admin/export-csv' + queryString;
                 window.location.href = exportUrl;

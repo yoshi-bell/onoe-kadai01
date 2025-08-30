@@ -22,10 +22,13 @@ class AdminController extends Controller
 
         if ($request->filled('name_or_email')) {
             $nameOrEmail = $request->input('name_or_email');
-            $query->where(function ($q) use ($nameOrEmail) {
+            $searchTerm = preg_replace('/\s+/', '', $nameOrEmail);
+
+            $query->where(function ($q) use ($nameOrEmail, $searchTerm) {
                 $q->where('last_name', 'like', "%{$nameOrEmail}%")
                     ->orWhere('first_name', 'like', "%{$nameOrEmail}%")
-                    ->orWhere('email', 'like', "%{$nameOrEmail}%");
+                    ->orWhere('email', 'like', "%{$nameOrEmail}%")
+                    ->orWhereRaw("CONCAT(last_name, first_name) LIKE ?", ["%{$searchTerm}%"]);
             });
         }
 
@@ -120,7 +123,6 @@ class AdminController extends Controller
         $query = $this->buildSearchQuery($request);
         $contacts = $query->get();
 
-        // CSVファイル生成
         $headers = [
             'Content-Type' => 'text/csv',
             'Content-Disposition' => 'attachment; filename="contacts_' . Carbon::now()->format('Ymd_His') . '.csv"',
@@ -128,10 +130,8 @@ class AdminController extends Controller
 
         $callback = function () use ($contacts) {
             $stream = fopen('php://output', 'w');
-            // Shift-JISに変換
             stream_filter_prepend($stream, 'convert.iconv.utf-8/cp932//TRANSLIT');
 
-            // ヘッダー行
             fputcsv($stream, [
                 'ID',
                 '姓',
@@ -145,7 +145,6 @@ class AdminController extends Controller
                 'お問い合わせ内容',
             ]);
 
-            // データ行
             foreach ($contacts as $contact) {
                 $genderName = '';
                 if ($contact->gender === 1) {

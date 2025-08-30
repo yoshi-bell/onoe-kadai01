@@ -19,16 +19,22 @@
                 </div>
                 <div class="form__group-content">
                     <div class="form__input--name">
-                        <input type="text" name="last_name" placeholder="例:山田" value="{{ old('last_name') }}" />
-                        <input type="text" name="first_name" placeholder="例:太郎" value="{{ old('first_name') }}" />
-                    </div>
-                    <div class="form__error">
-                        @error('last_name')
-                        {{ $message }}
-                        @enderror
-                        @error('first_name')
-                        {{ $message }}
-                        @enderror
+                        <div class="form__input-wrapper">
+                            <input type="text" name="last_name" placeholder="例:山田" value="{{ old('last_name') }}" />
+                            <div class="form__error">
+                                @error('last_name')
+                                {{ $message }}
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form__input-wrapper">
+                            <input type="text" name="first_name" placeholder="例:太郎" value="{{ old('first_name') }}" />
+                            <div class="form__error">
+                                @error('first_name')
+                                {{ $message }}
+                                @enderror
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -44,11 +50,7 @@
                         <label><input type="radio" name="gender" value="女性" @if(old('gender')=='女性' ) checked @endif>女性</label>
                         <label><input type="radio" name="gender" value="その他" @if(old('gender')=='その他' ) checked @endif>その他</label>
                     </div>
-                    <div class="form__error">
-                        @error('gender')
-                        {{ $message }}
-                        @enderror
-                    </div>
+                    <!-- genderの入力フォームはラジオボタンのためエラーは発生しないのでエラーメッセージは不要 -->
                 </div>
             </div>
 
@@ -127,7 +129,6 @@
                     <div class="form__input--select">
                         <select name="category_id">
                             <option value="" disabled selected>選択してください</option>
-                            {{-- カテゴリはコントローラから取得して表示 --}}
                             @if (isset($categories))
                             @foreach ($categories as $category)
                             <option value="{{ $category->id }}" @if(old('category_id')==$category->id) selected @endif>{{ $category->content }}</option>

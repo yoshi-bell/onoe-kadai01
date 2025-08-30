@@ -64,10 +64,8 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        // Decode the JSON data from the hidden input field
         $contact = json_decode($request->input('contact_data'), true);
 
-        // Convert gender to a numerical value for the database
         $genderValue = null;
         if ($contact['gender'] === '男性') {
             $genderValue = 1;
@@ -77,7 +75,6 @@ class ContactController extends Controller
             $genderValue = 3;
         }
 
-        // Prepare data for database insertion
         $dataToSave = [
             'first_name' => $contact['first_name'],
             'last_name' => $contact['last_name'],
@@ -90,7 +87,6 @@ class ContactController extends Controller
             'tel' => $contact['tel1'] . $contact['tel2'] . $contact['tel3'],
         ];
 
-        // Store data in the database
         Contact::create($dataToSave);
 
         return view('thanks');
