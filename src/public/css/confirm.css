@@ -4,7 +4,6 @@
     max-width: 900px;
     width: 70%;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
@@ -21,7 +20,6 @@
 
 .confirm-table {
     width: 100%;
-    /* 罫線を追加 */
     border: 1px solid #ddd;
 }
 
@@ -36,14 +34,12 @@
 
 .confirm-table__header {
     text-align: left;
-    padding: 15px 0;
-    width: 30%;
-    font-weight: bold;
+    padding: 18px 0 17px 40px;
+    width: 35%;
+    font-weight: normal;
     font-size: 18px;
-    /* 背景色を追加 */
     background-color: #BAA899;
     color: #fff;
-    padding-left: 10px;
 }
 
 .confirm-table__text {
